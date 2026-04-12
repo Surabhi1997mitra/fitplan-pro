@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitPlan Pro — Personalised Fitness Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HERO HEADER ============ -->
+<header class="hero-header">
+  <div class="hero-inner">
+    <div class="brand">
+      <i class="fa-solid fa-dumbbell brand-icon"></i>
+      <span class="brand-name">FitPlan <span class="brand-accent">Pro</span></span>
+    </div>
+    <p class="hero-tagline">Your Personalised Fitness Journey Starts Here</p>
+  </div>
+</header>
+
+<!-- ============ PROGRESS BAR ============ -->
+<div class="progress-container">
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="step-indicators" id="stepIndicators">
+    <div class="step-dot active" data-step="0"><span>1</span><small>Personal</small></div>
+    <div class="step-dot" data-step="1"><span>2</span><small>Body</small></div>
+    <div class="step-dot" data-step="2"><span>3</span><small>Goals</small></div>
+    <div class="step-dot" data-step="3"><span>4</span><small>Health</small></div>
+    <div class="step-dot" data-step="4"><span>5</span><small>Fitness</small></div>
+    <div class="step-dot" data-step="5"><span>6</span><small>Diet</small></div>
+    <div class="step-dot" data-step="6"><span>7</span><small>Lifestyle</small></div>
+    <div class="step-dot" data-step="7"><span>8</span><small>Measure</small></div>
+    <div class="step-dot" data-step="8"><span>9</span><small>Tracking</small></div>
+    <div class="step-dot" data-step="9"><span>✓</span><small>Review</small></div>
+  </div>
+</div>
+
+<!-- ============ MAIN FORM ============ -->
+<main class="form-wrapper">
+  <form id="fitnessForm" novalidate>
+
+    <!-- ======== STEP 0: Personal Details ======== -->
+    <section class="form-step active" data-step="0">
+      <div class="section-header">
+        <i class="fa-solid fa-user section-icon"></i>
+        <h2>Personal Details</h2>
+        <p>Let's get to know you better</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="fullName">Full Name <span class="req">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age <span class="req">*</span></label>
+          <input type="number" id="age" name="age" min="10" max="100" placeholder="e.g. 28" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender <span class="req">*</span></label>
+          <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="form-group">
+          <label for="altPhone">Alternate Phone</label>
+          <input type="tel" id="altPhone" name="altPhone" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group full">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="2" placeholder="Your full address"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="city">City <span class="req">*</span></label>
+          <select id="city" name="city" required>
+            <option value="">Select City</option>
+            <option>Mumbai</option><option>Delhi</option><option>Bangalore</option>
+            <option>Hyderabad</option><option>Ahmedabad</option><option>Chennai</option>
+            <option>Kolkata</option><option>Pune</option><option>Jaipur</option>
+            <option>Lucknow</option><option>Kanpur</option><option>Nagpur</option>
+            <option>Indore</option><option>Thane</option><option>Bhopal</option>
+            <option>Visakhapatnam</option><option>Patna</option><option>Vadodara</option>
+            <option>Ghaziabad</option><option>Ludhiana</option><option>Agra</option>
+            <option>Nashik</option><option>Faridabad</option><option>Meerut</option>
+            <option>Varanasi</option><option>Srinagar</option><option>Chandigarh</option>
+            <option>Guwahati</option><option>Coimbatore</option><option>Kochi</option>
+            <option>Dehradun</option><option>Noida</option><option>Gurugram</option>
+            <option>Mysore</option><option>Mangalore</option><option>Bhubaneswar</option>
+            <option>Ranchi</option><option>Raipur</option><option>Jodhpur</option>
+            <option>Udaipur</option><option>Amritsar</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="state">State <span class="req">*</span></label>
+          <select id="state" name="state" required>
+            <option value="">Select State</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+            <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+            <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+            <option>Himachal Pradesh</option><option>Jharkhand</option>
+            <option>Karnataka</option><option>Kerala</option>
+            <option>Madhya Pradesh</option><option>Maharashtra</option>
+            <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+            <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+            <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+            <option>Telangana</option><option>Tripura</option>
+            <option>Uttar Pradesh</option><option>Uttarakhand</option>
+            <option>West Bengal</option>
+            <optgroup label="Union Territories">
+              <option>Andaman and Nicobar Islands</option>
+              <option>Chandigarh</option><option>Dadra and Nagar Haveli and Daman and Diu</option>
+              <option>Delhi</option><option>Jammu and Kashmir</option>
+              <option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode</label>
+          <input type="text" id="pincode" name="pincode" placeholder="e.g. 400001" maxlength="6" pattern="[0-9]{6}">
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 1: Body Stats ======== -->
+    <section class="form-step" data-step="1">
+      <div class="section-header">
+        <i class="fa-solid fa-weight-scale section-icon"></i>
+        <h2>Body Stats</h2>
+        <p>Help us understand your current physique</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="height">Height <span class="req">*</span></label>
+          <div class="input-with-unit">
+            <input type="number" id="height" name="height" placeholder="e.g. 170" required>
+            <select id="heightUnit" name="heightUnit">
+              <option value="cm">cm</option>
+              <option value="feet-inches">ft-in</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="heightInchesGroup" style="display:none;">
+          <label for="heightInches">Inches</label>
+          <input type="number" id="heightInches" name="heightInches" min="0" max="11" placeholder="e.g. 8">
+        </div>
+        <div class="form-group">
+          <label for="currentWeight">Current Weight <span class="req">*</span></label>
+          <div class="input-with-unit">
+            <input type="number" id="currentWeight" name="currentWeight" placeholder="e.g. 75" required>
+            <select id="weightUnit" name="weightUnit">
+              <option value="kg">kg</option>
+              <option value="lbs">lbs</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="targetWeight">Target Weight <span class="req">*</span></label>
+          <div class="input-with-unit">
+            <input type="number" id="targetWeight" name="targetWeight" placeholder="e.g. 68" required>
+            <span class="unit-label" id="targetWeightUnit">kg</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bodyFat">Body Fat % <small>(optional)</small></label>
+          <input type="number" id="bodyFat" name="bodyFat" placeholder="e.g. 22" min="1" max="60">
+        </div>
+        <div class="form-group">
+          <label for="bodyType">Body Type <span class="req">*</span></label>
+          <select id="bodyType" name="bodyType" required>
+            <option value="">Select Body Type</option>
+            <option>Ectomorph (Lean/Thin)</option>
+            <option>Mesomorph (Athletic/Muscular)</option>
+            <option>Endomorph (Broad/Stocky)</option>
+            <option>Not Sure</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 2: Goals & Motivation ======== -->
+    <section class="form-step" data-step="2">
+      <div class="section-header">
+        <i class="fa-solid fa-bullseye section-icon"></i>
+        <h2>Goals & Motivation</h2>
+        <p>What would you like to achieve?</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="primaryGoal">Primary Goal <span class="req">*</span></label>
+          <select id="primaryGoal" name="primaryGoal" required>
+            <option value="">Select Primary Goal</option>
+            <option>Weight Loss</option>
+            <option>Muscle Gain</option>
+            <option>Body Recomposition</option>
+            <option>Improve Stamina</option>
+            <option>Athletic Performance</option>
+            <option>Flexibility & Mobility</option>
+            <option>General Fitness</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="secondaryGoal">Secondary Goal</label>
+          <select id="secondaryGoal" name="secondaryGoal">
+            <option value="">Select Secondary Goal</option>
+            <option>Weight Loss</option>
+            <option>Muscle Gain</option>
+            <option>Body Recomposition</option>
+            <option>Improve Stamina</option>
+            <option>Athletic Performance</option>
+            <option>Flexibility & Mobility</option>
+            <option>General Fitness</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">Target Timeline <span class="req">*</span></label>
+          <select id="timeline" name="timeline" required>
+            <option value="">Select Timeline</option>
+            <option>1 month</option>
+            <option>3 months</option>
+            <option>6 months</option>
+            <option>1 year</option>
+            <option>Long-term lifestyle</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="motivation">Motivation / Reason</label>
+          <textarea id="motivation" name="motivation" rows="4" placeholder="Tell us what's driving you to start this fitness journey..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 3: Health & Medical History ======== -->
+    <section class="form-step" data-step="3">
+      <div class="section-header">
+        <i class="fa-solid fa-heart-pulse section-icon"></i>
+        <h2>Health & Medical History</h2>
+        <p>This helps us design a safe plan for you</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="medicalConditions">Any medical conditions? <span class="req">*</span></label>
+          <select id="medicalConditions" name="medicalConditions" required>
+            <option value="">Select</option>
+            <option>None</option>
+            <option>Diabetes Type 1</option>
+            <option>Diabetes Type 2</option>
+            <option>Thyroid (Hypo)</option>
+            <option>Thyroid (Hyper)</option>
+            <option>PCOS / PCOD</option>
+            <option>Hypertension</option>
+            <option>Heart Condition</option>
+            <option>Asthma</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="injuries">Any injuries or chronic pain?</label>
+          <select id="injuries" name="injuries">
+            <option value="">Select</option>
+            <option>None</option>
+            <option>Knee</option>
+            <option>Back</option>
+            <option>Shoulder</option>
+            <option>Hip</option>
+            <option>Ankle</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Currently on any medication?</label>
+          <div class="toggle-group">
+            <label class="toggle-switch">
+              <input type="checkbox" id="onMedication" name="onMedication">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Yes</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group full conditional-field" id="medicationDetailsGroup" style="display:none;">
+          <label for="medicationDetails">Medication Details</label>
+          <textarea id="medicationDetails" name="medicationDetails" rows="2" placeholder="Please list your current medications..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Any recent surgery or hospitalisation?</label>
+          <div class="toggle-group">
+            <label class="toggle-switch">
+              <input type="checkbox" id="recentSurgery" name="recentSurgery">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Yes</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group full conditional-field" id="surgeryDetailsGroup" style="display:none;">
+          <label for="surgeryDetails">Surgery / Hospitalisation Details</label>
+          <textarea id="surgeryDetails" name="surgeryDetails" rows="2" placeholder="Please provide details..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="doctorClearance">Doctor clearance obtained?</label>
+          <select id="doctorClearance" name="doctorClearance">
+            <option value="">Select</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not Required</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Blood test reports available?</label>
+          <div class="toggle-group">
+            <label class="toggle-switch">
+              <input type="checkbox" id="bloodReports" name="bloodReports">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Yes</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 4: Fitness Background ======== -->
+    <section class="form-step" data-step="4">
+      <div class="section-header">
+        <i class="fa-solid fa-person-running section-icon"></i>
+        <h2>Fitness Background</h2>
+        <p>Tell us about your current fitness level</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="activityLevel">Current Activity Level <span class="req">*</span></label>
+          <select id="activityLevel" name="activityLevel" required>
+            <option value="">Select</option>
+            <option>Completely Sedentary</option>
+            <option>Lightly Active</option>
+            <option>Moderately Active</option>
+            <option>Very Active</option>
+            <option>Athlete-level</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="trainingExperience">Training Experience <span class="req">*</span></label>
+          <select id="trainingExperience" name="trainingExperience" required>
+            <option value="">Select</option>
+            <option>Beginner – never trained</option>
+            <option>Beginner – trained occasionally</option>
+            <option>Intermediate – 1-2 years</option>
+            <option>Advanced – 3+ years</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Preferred Workout Type <span class="req">*</span></label>
+          <div class="chip-group" id="workoutTypeGroup">
+            <label class="chip"><input type="checkbox" name="workoutType" value="Gym"><span><i class="fa-solid fa-dumbbell"></i> Gym</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Home Workout"><span><i class="fa-solid fa-house"></i> Home Workout</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Outdoor/Running"><span><i class="fa-solid fa-person-running"></i> Outdoor / Running</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Yoga"><span><i class="fa-solid fa-spa"></i> Yoga</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Swimming"><span><i class="fa-solid fa-person-swimming"></i> Swimming</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Sports-specific"><span><i class="fa-solid fa-futbol"></i> Sports-specific</span></label>
+            <label class="chip"><input type="checkbox" name="workoutType" value="Crossfit/Functional"><span><i class="fa-solid fa-fire"></i> Crossfit / Functional</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="workoutDays">Workout Days / Week <span class="req">*</span></label>
+          <select id="workoutDays" name="workoutDays" required>
+            <option value="">Select</option>
+            <option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sessionDuration">Session Duration <span class="req">*</span></label>
+          <select id="sessionDuration" name="sessionDuration" required>
+            <option value="">Select</option>
+            <option>30 min</option>
+            <option>45 min</option>
+            <option>60 min</option>
+            <option>90 min</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="equipmentAccess">Equipment Access <span class="req">*</span></label>
+          <select id="equipmentAccess" name="equipmentAccess" required>
+            <option value="">Select</option>
+            <option>Full Gym</option>
+            <option>Home with Dumbbells</option>
+            <option>Home with Resistance Bands</option>
+            <option>No Equipment / Bodyweight Only</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 5: Diet & Nutrition ======== -->
+    <section class="form-step" data-step="5">
+      <div class="section-header">
+        <i class="fa-solid fa-apple-whole section-icon"></i>
+        <h2>Diet & Nutrition</h2>
+        <p>Your eating habits help us build the right meal plan</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="dietaryPref">Dietary Preference <span class="req">*</span></label>
+          <select id="dietaryPref" name="dietaryPref" required>
+            <option value="">Select</option>
+            <option>Non-Vegetarian</option>
+            <option>Vegetarian</option>
+            <option>Eggetarian</option>
+            <option>Vegan</option>
+            <option>Jain</option>
+            <option>Sattvic</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="foodAllergies">Food Allergies / Intolerances</label>
+          <select id="foodAllergies" name="foodAllergies">
+            <option value="">Select</option>
+            <option>None</option>
+            <option>Lactose Intolerant</option>
+            <option>Gluten Intolerant</option>
+            <option>Nut Allergy</option>
+            <option>Soy Allergy</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="dislikedFoods">Foods you dislike or avoid</label>
+          <textarea id="dislikedFoods" name="dislikedFoods" rows="2" placeholder="e.g. bitter gourd, mushroom, seafood..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="mealsPerDay">Meals per day</label>
+          <select id="mealsPerDay" name="mealsPerDay">
+            <option value="">Select</option>
+            <option>1-2</option><option>3</option><option>4</option>
+            <option>5</option><option>6+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cookOwnFood">Do you cook your own food?</label>
+          <select id="cookOwnFood" name="cookOwnFood">
+            <option value="">Select</option>
+            <option>Yes – always</option>
+            <option>Mostly home food</option>
+            <option>Mix of home and outside</option>
+            <option>Mostly outside / tiffin</option>
+            <option>No – fully dependent on outside food</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="outsideFood">Eat outside / order food</label>
+          <select id="outsideFood" name="outsideFood">
+            <option value="">Select</option>
+            <option>Daily</option>
+            <option>4-5 times/week</option>
+            <option>2-3 times/week</option>
+            <option>Occasionally</option>
+            <option>Rarely</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="waterIntake">Daily Water Intake</label>
+          <select id="waterIntake" name="waterIntake">
+            <option value="">Select</option>
+            <option>Less than 1L</option>
+            <option>1-2L</option>
+            <option>2-3L</option>
+            <option>More than 3L</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wheyProtein">Whey / Protein Powder?</label>
+          <select id="wheyProtein" name="wheyProtein">
+            <option value="">Select</option>
+            <option>Yes – already using</option>
+            <option>Yes – open to it</option>
+            <option>No – prefer food sources only</option>
+            <option>No – lactose intolerant / avoid supplements</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Other Supplements Currently Used</label>
+          <div class="chip-group" id="supplementsGroup">
+            <label class="chip"><input type="checkbox" name="supplements" value="None"><span>None</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Creatine"><span>Creatine</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="BCAA"><span>BCAA</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Multivitamin"><span>Multivitamin</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Omega-3"><span>Omega-3</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Ashwagandha"><span>Ashwagandha</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="alcohol">Alcohol Consumption</label>
+          <select id="alcohol" name="alcohol">
+            <option value="">Select</option>
+            <option>Never</option>
+            <option>Occasionally</option>
+            <option>Weekends only</option>
+            <option>3-4 times/week</option>
+            <option>Daily</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="caffeine">Caffeine / Tea / Coffee</label>
+          <select id="caffeine" name="caffeine">
+            <option value="">Select</option>
+            <option>None</option>
+            <option>1 cup/day</option>
+            <option>2-3 cups/day</option>
+            <option>4+ cups/day</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="foodBudget">Monthly Food Budget</label>
+          <select id="foodBudget" name="foodBudget">
+            <option value="">Select</option>
+            <option>Under ₹3,000</option>
+            <option>₹3,000 – ₹5,000</option>
+            <option>₹5,000 – ₹8,000</option>
+            <option>₹8,000 – ₹12,000</option>
+            <option>No budget constraint</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 6: Lifestyle & Recovery ======== -->
+    <section class="form-step" data-step="6">
+      <div class="section-header">
+        <i class="fa-solid fa-bed section-icon"></i>
+        <h2>Lifestyle & Recovery</h2>
+        <p>Understanding your daily routine and recovery</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="occupation">Occupation <span class="req">*</span></label>
+          <select id="occupation" name="occupation" required>
+            <option value="">Select</option>
+            <option>Student</option>
+            <option>Desk Job / Office Work</option>
+            <option>Field Job / Physical Work</option>
+            <option>Homemaker</option>
+            <option>Business Owner</option>
+            <option>Freelancer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="workHours">Work Hours / Day</label>
+          <select id="workHours" name="workHours">
+            <option value="">Select</option>
+            <option>Less than 6 hrs</option>
+            <option>6-8 hrs</option>
+            <option>8-10 hrs</option>
+            <option>10+ hrs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dailySteps">Daily Step Count Estimate</label>
+          <select id="dailySteps" name="dailySteps">
+            <option value="">Select</option>
+            <option>Less than 2,000</option>
+            <option>2,000 – 5,000</option>
+            <option>5,000 – 8,000</option>
+            <option>8,000 – 12,000</option>
+            <option>12,000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sleepDuration">Average Sleep Duration</label>
+          <select id="sleepDuration" name="sleepDuration">
+            <option value="">Select</option>
+            <option>Less than 5 hrs</option>
+            <option>5-6 hrs</option>
+            <option>6-7 hrs</option>
+            <option>7-8 hrs</option>
+            <option>8+ hrs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sleepQuality">Sleep Quality</label>
+          <select id="sleepQuality" name="sleepQuality">
+            <option value="">Select</option>
+            <option>Very poor</option>
+            <option>Poor</option>
+            <option>Average</option>
+            <option>Good</option>
+            <option>Excellent</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="stressLevel">Stress Level</label>
+          <select id="stressLevel" name="stressLevel">
+            <option value="">Select</option>
+            <option>Very Low</option>
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+            <option>Very High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="smoking">Smoking Habit</label>
+          <select id="smoking" name="smoking">
+            <option value="">Select</option>
+            <option>Non-smoker</option>
+            <option>Occasional</option>
+            <option>Regular</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="menstrualCycle">Menstrual Cycle Regular? <small>(Female clients)</small></label>
+          <select id="menstrualCycle" name="menstrualCycle">
+            <option value="">Select</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>N/A</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 7: Measurements (Optional) ======== -->
+    <section class="form-step" data-step="7">
+      <div class="section-header">
+        <i class="fa-solid fa-ruler section-icon"></i>
+        <h2>Body Measurements</h2>
+        <p>Optional but helps us track your progress accurately</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="chest">Chest (cm)</label>
+          <input type="number" id="chest" name="chest" placeholder="e.g. 96">
+        </div>
+        <div class="form-group">
+          <label for="waist">Waist (cm)</label>
+          <input type="number" id="waist" name="waist" placeholder="e.g. 80">
+        </div>
+        <div class="form-group">
+          <label for="hips">Hips (cm)</label>
+          <input type="number" id="hips" name="hips" placeholder="e.g. 95">
+        </div>
+        <div class="form-group">
+          <label for="leftArm">Left Arm (cm)</label>
+          <input type="number" id="leftArm" name="leftArm" placeholder="e.g. 32">
+        </div>
+        <div class="form-group">
+          <label for="rightArm">Right Arm (cm)</label>
+          <input type="number" id="rightArm" name="rightArm" placeholder="e.g. 33">
+        </div>
+        <div class="form-group">
+          <label for="leftThigh">Left Thigh (cm)</label>
+          <input type="number" id="leftThigh" name="leftThigh" placeholder="e.g. 55">
+        </div>
+        <div class="form-group">
+          <label for="rightThigh">Right Thigh (cm)</label>
+          <input type="number" id="rightThigh" name="rightThigh" placeholder="e.g. 56">
+        </div>
+        <div class="form-group">
+          <label for="restingHR">Resting Heart Rate (bpm)</label>
+          <input type="number" id="restingHR" name="restingHR" placeholder="e.g. 72">
+        </div>
+        <div class="form-group">
+          <label for="bloodPressure">Blood Pressure</label>
+          <input type="text" id="bloodPressure" name="bloodPressure" placeholder="e.g. 120/80">
+        </div>
+        <div class="form-group full">
+          <label>Progress Photos <small>(optional)</small></label>
+          <div class="file-upload-area" id="fileUploadArea">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p>Drag & drop photos here or <span class="upload-link">browse</span></p>
+            <small>JPG, PNG up to 5MB each</small>
+            <input type="file" id="progressPhotos" name="progressPhotos" multiple accept="image/*" class="file-input-hidden">
+          </div>
+          <div class="uploaded-files" id="uploadedFiles"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 8: Tracking Preferences ======== -->
+    <section class="form-step" data-step="8">
+      <div class="section-header">
+        <i class="fa-solid fa-chart-line section-icon"></i>
+        <h2>Tracking & Preferences</h2>
+        <p>How would you like us to stay in touch?</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="trackingMethod">Preferred Tracking Method <span class="req">*</span></label>
+          <select id="trackingMethod" name="trackingMethod" required>
+            <option value="">Select</option>
+            <option>WhatsApp updates</option>
+            <option>Google Sheets</option>
+            <option>Fitness App</option>
+            <option>Email</option>
+            <option>In-person check-in</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="checkinFrequency">Check-in Frequency <span class="req">*</span></label>
+          <select id="checkinFrequency" name="checkinFrequency" required>
+            <option value="">Select</option>
+            <option>Daily</option>
+            <option>Every 3 days</option>
+            <option>Weekly</option>
+            <option>Bi-weekly</option>
+            <option>Monthly</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="hearAboutUs">How did you hear about us?</label>
+          <select id="hearAboutUs" name="hearAboutUs">
+            <option value="">Select</option>
+            <option>Instagram</option>
+            <option>YouTube</option>
+            <option>Friend Referral</option>
+            <option>Google Search</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="additionalNotes">Any additional notes or questions?</label>
+          <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Anything else you'd like us to know..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 9: Summary & Submit ======== -->
+    <section class="form-step" data-step="9">
+      <div class="section-header">
+        <i class="fa-solid fa-clipboard-check section-icon"></i>
+        <h2>Review & Submit</h2>
+        <p>Please review your details before submitting</p>
+      </div>
+      <div id="summaryContent" class="summary-content"></div>
+
+      <!-- Submission Options -->
+      <div class="submit-options">
+        <h3>Choose how to submit your form:</h3>
+        <div class="submit-cards">
+          <button type="button" class="submit-card" id="submitWhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Send via WhatsApp</span>
+            <small>Opens WhatsApp with your data</small>
+          </button>
+          <button type="button" class="submit-card" id="submitEmail">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Send via Email</span>
+            <small>Sends data to coach's email</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NAVIGATION BUTTONS ============ -->
+    <div class="form-nav">
+      <button type="button" class="btn btn-prev" id="prevBtn" style="display:none;">
+        <i class="fa-solid fa-arrow-left"></i> Previous
+      </button>
+      <button type="button" class="btn btn-next" id="nextBtn">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </form>
+</main>
+
+<!-- ============ SUCCESS MODAL ============ -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-content">
+    <div class="modal-icon success">
+      <i class="fa-solid fa-fire-flame-curved"></i>
+    </div>
+    <h2>You Just Took the First Step!</h2>
+    <p class="motivation-text">Your transformation starts NOW. Every champion was once a beginner who refused to give up. Trust the process, stay consistent, and watch yourself become the strongest version of you.</p>
+    <p class="motivation-sub">Your coach will review your details and reach out to you soon. Get ready!</p>
+    <button class="btn btn-next" onclick="document.getElementById('successModal').classList.remove('show');">Let's Go!</button>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <p>Made with <i class="fa-solid fa-heart" style="color:#FF6B35;"></i> by FitPlan Pro &mdash; Your Fitness, Our Mission</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
