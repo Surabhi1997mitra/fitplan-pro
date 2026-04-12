@@ -1,5 +1,5 @@
 /* =========================================================
-   FitPlan Pro — Fitness Assessment Form
+   Your.Fit.Mitra — Fitness Assessment Form
    Premium responsive design with Indian-themed accent colors
    ========================================================= */
 
@@ -111,6 +111,15 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.hero-motto {
+  color: var(--saffron-light);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 .hero-tagline {

@@ -1,5 +1,5 @@
 /* =========================================================
-   FitPlan Pro — Form Logic
+   Your.Fit.Mitra — Form Logic
    Step navigation, validation, conditional fields,
    summary generation, and multi-channel submission
    ========================================================= */
@@ -564,7 +564,7 @@ function formatForWhatsApp(data) {
   const line = (label, value) => value ? `*${label}:* ${value}` : '';
 
   const lines = [
-    '🏋️ *FITPLAN PRO — NEW CLIENT ASSESSMENT*',
+    '🏋️ *YOUR.FIT.MITRA — NEW CLIENT ASSESSMENT*',
     '━━━━━━━━━━━━━━━━━━━━━━━━',
     '',
     '👤 *PERSONAL DETAILS*',
@@ -653,7 +653,7 @@ function formatForWhatsApp(data) {
     line('Notes', data.additionalNotes),
     '',
     '━━━━━━━━━━━━━━━━━━━━━━━━',
-    '✅ Submitted via FitPlan Pro',
+    '✅ Submitted via Your.Fit.Mitra',
   ];
 
   return lines.filter(l => l !== null && l !== undefined).join('\n');
@@ -682,7 +682,7 @@ async function submitViaEmail() {
   try {
     // Build a FormData-friendly payload with readable labels
     const payload = {
-      _subject: `New FitPlan Assessment — ${data.fullName}`,
+      _subject: `New Your.Fit.Mitra Assessment — ${data.fullName}`,
       _captcha: 'false',
       _template: 'table',
 
