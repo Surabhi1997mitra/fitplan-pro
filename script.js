@@ -10,7 +10,7 @@
 
 const CONFIG = {
   // WhatsApp — your number with country code, no + or spaces
-  whatsappNumber: '918637568054',
+  whatsappNumber: '919830552513',
 
   // Email — using FormSubmit.co (free, no API key needed)
   // First submission will ask you to confirm your email — check inbox!
