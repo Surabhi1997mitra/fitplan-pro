@@ -35,9 +35,9 @@
     <div class="step-dot" data-step="3"><span>4</span><small>Health</small></div>
     <div class="step-dot" data-step="4"><span>5</span><small>Fitness</small></div>
     <div class="step-dot" data-step="5"><span>6</span><small>Diet</small></div>
-    <div class="step-dot" data-step="6"><span>7</span><small>Lifestyle</small></div>
-    <div class="step-dot" data-step="7"><span>8</span><small>Measure</small></div>
-    <div class="step-dot" data-step="8"><span>9</span><small>Tracking</small></div>
+    <div class="step-dot" data-step="6"><span>7</span><small>Meals</small></div>
+    <div class="step-dot" data-step="7"><span>8</span><small>Lifestyle</small></div>
+    <div class="step-dot" data-step="8"><span>9</span><small>Measure</small></div>
     <div class="step-dot" data-step="9"><span>✓</span><small>Review</small></div>
   </div>
 </div>
@@ -234,17 +234,6 @@
             <option>General Fitness</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="timeline">Target Timeline <span class="req">*</span></label>
-          <select id="timeline" name="timeline" required>
-            <option value="">Select Timeline</option>
-            <option>1 month</option>
-            <option>3 months</option>
-            <option>6 months</option>
-            <option>1 year</option>
-            <option>Long-term lifestyle</option>
-          </select>
-        </div>
         <div class="form-group full">
           <label for="motivation">Motivation / Reason</label>
           <textarea id="motivation" name="motivation" rows="4" placeholder="Tell us what's driving you to start this fitness journey..."></textarea>
@@ -261,34 +250,55 @@
       </div>
       <div class="form-grid">
         <div class="form-group full">
-          <label for="medicalConditions">Any medical conditions? <span class="req">*</span></label>
-          <select id="medicalConditions" name="medicalConditions" required>
-            <option value="">Select</option>
-            <option>None</option>
-            <option>Diabetes Type 1</option>
-            <option>Diabetes Type 2</option>
-            <option>Thyroid (Hypo)</option>
-            <option>Thyroid (Hyper)</option>
-            <option>PCOS / PCOD</option>
-            <option>Hypertension</option>
-            <option>Heart Condition</option>
-            <option>Asthma</option>
-            <option>Other</option>
-          </select>
+          <label>Any medical conditions? (select all that apply)</label>
+          <div class="chip-group" id="medicalConditionsGroup">
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="None"><span>None</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Diabetes Type 1"><span>Diabetes Type 1</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Diabetes Type 2"><span>Diabetes Type 2</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Thyroid (Hypo)"><span>Thyroid (Hypo)</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Thyroid (Hyper)"><span>Thyroid (Hyper)</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="PCOS / PCOD"><span>PCOS / PCOD</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Hypertension"><span>Hypertension</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Heart Condition"><span>Heart Condition</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Asthma"><span>Asthma</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="High Cholesterol"><span>High Cholesterol</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Fatty Liver"><span>Fatty Liver</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Kidney Issues"><span>Kidney Issues</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Gut / Digestive Issues"><span>Gut / Digestive Issues</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Hormonal Imbalance"><span>Hormonal Imbalance</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Anaemia"><span>Anaemia</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Arthritis"><span>Arthritis</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Osteoporosis"><span>Osteoporosis</span></label>
+            <label class="chip"><input type="checkbox" name="medicalConditions" value="Other"><span>Other</span></label>
+          </div>
         </div>
         <div class="form-group full">
-          <label for="injuries">Any injuries or chronic pain?</label>
-          <select id="injuries" name="injuries">
-            <option value="">Select</option>
-            <option>None</option>
-            <option>Knee</option>
-            <option>Back</option>
-            <option>Shoulder</option>
-            <option>Hip</option>
-            <option>Ankle</option>
-            <option>Other</option>
-          </select>
+          <label for="medicalConditionsExtra">Any other medical history your coach should know about?</label>
+          <textarea id="medicalConditionsExtra" name="medicalConditionsExtra" rows="3" placeholder="e.g. family history of heart disease, previous fractures, autoimmune conditions, hormonal treatments, anything relevant..."></textarea>
         </div>
+
+        <div class="form-group full">
+          <label>Injuries or chronic pain? (select all that apply)</label>
+          <div class="chip-group" id="injuriesGroup">
+            <label class="chip"><input type="checkbox" name="injuries" value="None"><span>None</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Knee"><span>Knee</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Lower Back"><span>Lower Back</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Upper Back"><span>Upper Back</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Shoulder"><span>Shoulder</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Hip"><span>Hip</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Ankle"><span>Ankle</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Wrist / Elbow"><span>Wrist / Elbow</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Neck"><span>Neck</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Sciatica"><span>Sciatica</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Slip Disc"><span>Slip Disc</span></label>
+            <label class="chip"><input type="checkbox" name="injuries" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="injuryDetails">Describe your injury / pain in more detail</label>
+          <textarea id="injuryDetails" name="injuryDetails" rows="2" placeholder="e.g. right knee pain for 2 years, avoid squats and lunges, cleared by physio..."></textarea>
+        </div>
+
         <div class="form-group">
           <label>Currently on any medication?</label>
           <div class="toggle-group">
@@ -376,7 +386,6 @@
             <label class="chip"><input type="checkbox" name="workoutType" value="Outdoor/Running"><span><i class="fa-solid fa-person-running"></i> Outdoor / Running</span></label>
             <label class="chip"><input type="checkbox" name="workoutType" value="Yoga"><span><i class="fa-solid fa-spa"></i> Yoga</span></label>
             <label class="chip"><input type="checkbox" name="workoutType" value="Swimming"><span><i class="fa-solid fa-person-swimming"></i> Swimming</span></label>
-            <label class="chip"><input type="checkbox" name="workoutType" value="Sports-specific"><span><i class="fa-solid fa-futbol"></i> Sports-specific</span></label>
             <label class="chip"><input type="checkbox" name="workoutType" value="Crossfit/Functional"><span><i class="fa-solid fa-fire"></i> Crossfit / Functional</span></label>
           </div>
         </div>
@@ -419,18 +428,48 @@
         <p>Your eating habits help us build the right meal plan</p>
       </div>
       <div class="form-grid">
-        <div class="form-group">
+
+        <!-- Veg / Non-Veg -->
+        <div class="form-group full">
           <label for="dietaryPref">Dietary Preference <span class="req">*</span></label>
           <select id="dietaryPref" name="dietaryPref" required>
             <option value="">Select</option>
             <option>Non-Vegetarian</option>
             <option>Vegetarian</option>
             <option>Eggetarian</option>
-            <option>Vegan</option>
-            <option>Jain</option>
-            <option>Sattvic</option>
           </select>
         </div>
+
+        <!-- Vegetarian protein sources (shown for Veg / Eggetarian / Vegan) -->
+        <div class="form-group full conditional-field" id="vegProteinGroup" style="display:none;">
+          <label>Vegetarian Protein Sources you consume <span class="req">*</span></label>
+          <div class="chip-group" id="vegProteinChips">
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Paneer"><span>Paneer</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Milk"><span>Milk</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Curd / Yoghurt"><span>Curd / Yoghurt</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Cheese"><span>Cheese</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Soya Chunks / Tofu"><span>Soya Chunks / Tofu</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Lentils / Dal"><span>Lentils / Dal</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Chickpeas / Rajma / Beans"><span>Chickpeas / Rajma / Beans</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Nuts & Seeds"><span>Nuts &amp; Seeds</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Peanut Butter"><span>Peanut Butter</span></label>
+            <label class="chip"><input type="checkbox" name="vegProtein" value="Eggs"><span>Eggs</span></label>
+          </div>
+        </div>
+
+        <!-- Non-veg protein sources (shown for Non-Veg / Eggetarian) -->
+        <div class="form-group full conditional-field" id="nonVegProteinGroup" style="display:none;">
+          <label>Non-Vegetarian Protein Sources you consume</label>
+          <div class="chip-group" id="nonVegProteinChips">
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Chicken"><span>Chicken</span></label>
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Fish"><span>Fish</span></label>
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Eggs"><span>Eggs</span></label>
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Mutton / Lamb"><span>Mutton / Lamb</span></label>
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Prawns / Seafood"><span>Prawns / Seafood</span></label>
+            <label class="chip"><input type="checkbox" name="nonVegProtein" value="Tuna / Canned Fish"><span>Tuna / Canned Fish</span></label>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="foodAllergies">Food Allergies / Intolerances</label>
           <select id="foodAllergies" name="foodAllergies">
@@ -443,6 +482,7 @@
             <option>Other</option>
           </select>
         </div>
+
         <div class="form-group full">
           <label for="dislikedFoods">Foods you dislike or avoid</label>
           <textarea id="dislikedFoods" name="dislikedFoods" rows="2" placeholder="e.g. bitter gourd, mushroom, seafood..."></textarea>
@@ -487,28 +527,58 @@
             <option>More than 3L</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="wheyProtein">Whey / Protein Powder?</label>
-          <select id="wheyProtein" name="wheyProtein">
-            <option value="">Select</option>
-            <option>Yes – already using</option>
-            <option>Yes – open to it</option>
-            <option>No – prefer food sources only</option>
-            <option>No – lactose intolerant / avoid supplements</option>
-          </select>
-        </div>
+
+        <!-- Supplements currently taking -->
         <div class="form-group full">
-          <label>Other Supplements Currently Used</label>
+          <label>Supplements Currently Taking</label>
           <div class="chip-group" id="supplementsGroup">
             <label class="chip"><input type="checkbox" name="supplements" value="None"><span>None</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Whey Protein"><span>Whey Protein</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Plant Protein"><span>Plant Protein</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="Creatine"><span>Creatine</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="BCAA"><span>BCAA</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="Multivitamin"><span>Multivitamin</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Vitamin D3"><span>Vitamin D3</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Vitamin B12"><span>Vitamin B12</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Iron"><span>Iron</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="Omega-3"><span>Omega-3</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Magnesium"><span>Magnesium</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Glucosamine"><span>Glucosamine</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Calcium"><span>Calcium</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="Ashwagandha"><span>Ashwagandha</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Collagen"><span>Collagen</span></label>
+            <label class="chip"><input type="checkbox" name="supplements" value="Probiotics"><span>Probiotics</span></label>
             <label class="chip"><input type="checkbox" name="supplements" value="Other"><span>Other</span></label>
           </div>
         </div>
+        <div class="form-group full" id="supplementsOtherGroup" style="display:none;">
+          <label for="supplementsOther">Please specify other supplements</label>
+          <input type="text" id="supplementsOther" name="supplementsOther" placeholder="e.g. Zinc, CoQ10, L-Carnitine...">
+        </div>
+
+        <!-- Willingness to take recommended supplements -->
+        <div class="form-group full">
+          <label>If your coach suggests supplements, would you be open to taking them? (e.g. protein powder, magnesium, glucosamine, omega-3, vitamin D3, collagen, probiotics)</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="willingSupplements" value="Yes – open to all suggestions"> Yes, open to all suggestions</label>
+            <label class="radio-option"><input type="radio" name="willingSupplements" value="Yes – but only a few"> Yes, but only a few (mention in notes)</label>
+            <label class="radio-option"><input type="radio" name="willingSupplements" value="No – prefer food sources only"> No, prefer food sources only</label>
+          </div>
+        </div>
+
+        <!-- Protein powder budget -->
+        <div class="form-group full">
+          <label for="proteinPowderBudget">If protein powder is recommended, what's your monthly budget for it?</label>
+          <select id="proteinPowderBudget" name="proteinPowderBudget">
+            <option value="">Select</option>
+            <option>₹1,000 – ₹2,000</option>
+            <option>₹2,000 – ₹3,000</option>
+            <option>₹3,000 – ₹5,000</option>
+            <option>Premium (₹5,000+)</option>
+            <option>Not interested in protein powder</option>
+          </select>
+        </div>
+
         <div class="form-group">
           <label for="alcohol">Alcohol Consumption</label>
           <select id="alcohol" name="alcohol">
@@ -544,8 +614,142 @@
       </div>
     </section>
 
-    <!-- ======== STEP 6: Lifestyle & Recovery ======== -->
+    <!-- ======== STEP 6: Detailed Meal Habits ======== -->
     <section class="form-step" data-step="6">
+      <div class="section-header">
+        <i class="fa-solid fa-utensils section-icon"></i>
+        <h2>Your Typical Daily Meals</h2>
+        <p>Tell us exactly what you eat — this is the most important section for building your plan</p>
+      </div>
+      <div class="form-grid">
+
+        <!-- Breakfast -->
+        <div class="form-group full">
+          <label>Typical Breakfast <span class="req">*</span></label>
+          <p class="field-hint">Select everything you commonly eat at breakfast (pick all that apply)</p>
+          <div class="chip-group" id="breakfastGroup">
+            <label class="chip"><input type="checkbox" name="breakfast" value="Poha"><span>Poha</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Upma"><span>Upma</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Idli / Dosa / Vada"><span>Idli / Dosa / Vada</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Paratha (plain / aloo / stuffed)"><span>Paratha</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Eggs (boiled / omelette / scrambled)"><span>Eggs</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Bread / Toast"><span>Bread / Toast</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Cereal / Oats / Muesli"><span>Cereal / Oats / Muesli</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Fruits / Fruit Bowl"><span>Fruits</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Milk / Curd / Yoghurt"><span>Milk / Curd</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Smoothie / Protein Shake"><span>Smoothie / Shake</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Peanut Butter on Bread"><span>Peanut Butter Bread</span></label>
+            <label class="chip"><input type="checkbox" name="breakfast" value="Skip breakfast / Intermittent fasting"><span>Skip / Fasting</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="breakfastDetails">Describe your usual breakfast in detail</label>
+          <textarea id="breakfastDetails" name="breakfastDetails" rows="3" placeholder="e.g. 2 rotis with sabzi + 1 glass milk, or 3 boiled eggs + oats with banana..."></textarea>
+        </div>
+
+        <!-- Lunch -->
+        <div class="form-group full">
+          <label>Typical Lunch <span class="req">*</span></label>
+          <p class="field-hint">Select everything you commonly eat at lunch</p>
+          <div class="chip-group" id="lunchGroup">
+            <label class="chip"><input type="checkbox" name="lunch" value="Roti / Chapati"><span>Roti / Chapati</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Rice"><span>Rice</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Dal"><span>Dal</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Sabzi / Vegetable Curry"><span>Sabzi / Curry</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Paneer dish"><span>Paneer Dish</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Chicken / Mutton curry"><span>Chicken / Mutton</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Fish / Seafood"><span>Fish / Seafood</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Salad"><span>Salad</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Curd / Raita"><span>Curd / Raita</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Sandwich / Wrap"><span>Sandwich / Wrap</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Tiffin / Office meal"><span>Tiffin / Office meal</span></label>
+            <label class="chip"><input type="checkbox" name="lunch" value="Skip lunch"><span>Skip Lunch</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="lunchDetails">Describe your usual lunch in detail</label>
+          <textarea id="lunchDetails" name="lunchDetails" rows="3" placeholder="e.g. 3 rotis + dal + sabzi + curd, or rice + chicken curry + salad..."></textarea>
+        </div>
+
+        <!-- Dinner -->
+        <div class="form-group full">
+          <label>Typical Dinner <span class="req">*</span></label>
+          <p class="field-hint">Select everything you commonly eat at dinner</p>
+          <div class="chip-group" id="dinnerGroup">
+            <label class="chip"><input type="checkbox" name="dinner" value="Roti / Chapati"><span>Roti / Chapati</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Rice"><span>Rice</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Dal"><span>Dal</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Sabzi / Vegetable Curry"><span>Sabzi / Curry</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Paneer dish"><span>Paneer Dish</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Chicken / Mutton curry"><span>Chicken / Mutton</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Fish / Seafood"><span>Fish / Seafood</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Soup"><span>Soup</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Salad"><span>Salad</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Light meal / just fruits / milk"><span>Light meal / Fruits</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Outside food / restaurant"><span>Outside / Restaurant</span></label>
+            <label class="chip"><input type="checkbox" name="dinner" value="Skip dinner"><span>Skip Dinner</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="dinnerDetails">Describe your usual dinner in detail</label>
+          <textarea id="dinnerDetails" name="dinnerDetails" rows="3" placeholder="e.g. 2 rotis + dal + sabzi, or grilled chicken + salad + milk..."></textarea>
+        </div>
+
+        <!-- Snacks -->
+        <div class="form-group full">
+          <label>Typical Snacks (between meals)</label>
+          <p class="field-hint">Select everything you commonly snack on</p>
+          <div class="chip-group" id="snacksGroup">
+            <label class="chip"><input type="checkbox" name="snacks" value="Fruits"><span>Fruits</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Nuts & Dry Fruits"><span>Nuts &amp; Dry Fruits</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Biscuits / Cookies"><span>Biscuits / Cookies</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Namkeen / Chips / Bhujia"><span>Namkeen / Chips</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Samosa / Vada Pav / Pakoda"><span>Samosa / Vada Pav</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Peanut Butter / Bread"><span>Peanut Butter</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Protein Bar / Energy Bar"><span>Protein / Energy Bar</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Boiled Eggs / Chicken"><span>Boiled Eggs / Chicken</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Sprouts"><span>Sprouts</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Chaat / Street Food"><span>Chaat / Street Food</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="Tea / Coffee with snacks"><span>Tea / Coffee + snacks</span></label>
+            <label class="chip"><input type="checkbox" name="snacks" value="No snacking"><span>No Snacking</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="snacksDetails">Describe your snacking habits in detail</label>
+          <textarea id="snacksDetails" name="snacksDetails" rows="2" placeholder="e.g. 1 banana + 10 almonds at 4pm, or chai + 2 biscuits mid-morning..."></textarea>
+        </div>
+
+        <!-- Pre / Post workout meal -->
+        <div class="form-group full">
+          <label for="preworkoutMeal">Pre-Workout Meal / Snack (if any)</label>
+          <textarea id="preworkoutMeal" name="preworkoutMeal" rows="2" placeholder="e.g. banana + black coffee 30 min before gym, or nothing..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="postworkoutMeal">Post-Workout Meal / Snack (if any)</label>
+          <textarea id="postworkoutMeal" name="postworkoutMeal" rows="2" placeholder="e.g. protein shake + banana, or dal rice, or nothing specific..."></textarea>
+        </div>
+
+        <!-- Cheat meals -->
+        <div class="form-group">
+          <label for="cheatFrequency">Cheat Meals / Week</label>
+          <select id="cheatFrequency" name="cheatFrequency">
+            <option value="">Select</option>
+            <option>Never</option>
+            <option>Once a week</option>
+            <option>Twice a week</option>
+            <option>3-4 times a week</option>
+            <option>Daily indulgences</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="mealDescriptionExtra">Anything else about your diet we should know?</label>
+          <textarea id="mealDescriptionExtra" name="mealDescriptionExtra" rows="3" placeholder="e.g. I fast on Tuesdays, I eat late at night, I binge on weekends, I follow no-sugar rule on weekdays..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STEP 7: Lifestyle & Recovery ======== -->
+    <section class="form-step" data-step="7">
       <div class="section-header">
         <i class="fa-solid fa-bed section-icon"></i>
         <h2>Lifestyle & Recovery</h2>
@@ -640,12 +844,12 @@
       </div>
     </section>
 
-    <!-- ======== STEP 7: Measurements (Optional) ======== -->
-    <section class="form-step" data-step="7">
+    <!-- ======== STEP 8: Measurements ======== -->
+    <section class="form-step" data-step="8">
       <div class="section-header">
         <i class="fa-solid fa-ruler section-icon"></i>
-        <h2>Body Measurements</h2>
-        <p>Optional but helps us track your progress accurately</p>
+        <h2>Body Measurements & Progress Photos</h2>
+        <p>Measurements are optional; photos are mandatory to personalise your plan</p>
       </div>
       <div class="form-grid">
         <div class="form-group">
@@ -685,62 +889,54 @@
           <input type="text" id="bloodPressure" name="bloodPressure" placeholder="e.g. 120/80">
         </div>
         <div class="form-group full">
-          <label>Progress Photos <small>(optional)</small></label>
-          <div class="file-upload-area" id="fileUploadArea">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-            <p>Drag & drop photos here or <span class="upload-link">browse</span></p>
-            <small>JPG, PNG up to 5MB each</small>
-            <input type="file" id="progressPhotos" name="progressPhotos" multiple accept="image/*" class="file-input-hidden">
+          <label>Progress Photos <span class="req">*</span> — Mandatory</label>
+          <div class="photo-instructions">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+              <p><strong>Please upload 4 photos:</strong> Front, Back, Left side, Right side</p>
+              <p>Wear form-fitting clothing so your body composition is clearly visible — e.g. <strong>sports bra &amp; shorts</strong>, or <strong>fitted top &amp; leggings</strong>. Avoid loose or baggy clothing.</p>
+              <p class="confidential-note"><i class="fa-solid fa-lock"></i> These photos are <strong>strictly confidential</strong> and used solely by your coach to personalise your fitness plan. They will never be shared.</p>
+            </div>
+          </div>
+          <div class="photo-upload-grid">
+            <div class="photo-upload-slot" id="photoSlotFront">
+              <label class="photo-slot-label" for="photoFront">
+                <i class="fa-solid fa-user"></i>
+                <span>Front View</span>
+                <small>Required</small>
+              </label>
+              <input type="file" id="photoFront" name="photoFront" accept="image/*" class="file-input-hidden" required>
+              <div class="photo-preview" id="previewFront"></div>
+            </div>
+            <div class="photo-upload-slot" id="photoSlotBack">
+              <label class="photo-slot-label" for="photoBack">
+                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                <span>Back View</span>
+                <small>Required</small>
+              </label>
+              <input type="file" id="photoBack" name="photoBack" accept="image/*" class="file-input-hidden" required>
+              <div class="photo-preview" id="previewBack"></div>
+            </div>
+            <div class="photo-upload-slot" id="photoSlotLeft">
+              <label class="photo-slot-label" for="photoLeft">
+                <i class="fa-solid fa-angles-left"></i>
+                <span>Left Side</span>
+                <small>Required</small>
+              </label>
+              <input type="file" id="photoLeft" name="photoLeft" accept="image/*" class="file-input-hidden" required>
+              <div class="photo-preview" id="previewLeft"></div>
+            </div>
+            <div class="photo-upload-slot" id="photoSlotRight">
+              <label class="photo-slot-label" for="photoRight">
+                <i class="fa-solid fa-angles-right"></i>
+                <span>Right Side</span>
+                <small>Required</small>
+              </label>
+              <input type="file" id="photoRight" name="photoRight" accept="image/*" class="file-input-hidden" required>
+              <div class="photo-preview" id="previewRight"></div>
+            </div>
           </div>
           <div class="uploaded-files" id="uploadedFiles"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======== STEP 8: Tracking Preferences ======== -->
-    <section class="form-step" data-step="8">
-      <div class="section-header">
-        <i class="fa-solid fa-chart-line section-icon"></i>
-        <h2>Tracking & Preferences</h2>
-        <p>How would you like us to stay in touch?</p>
-      </div>
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="trackingMethod">Preferred Tracking Method <span class="req">*</span></label>
-          <select id="trackingMethod" name="trackingMethod" required>
-            <option value="">Select</option>
-            <option>WhatsApp updates</option>
-            <option>Google Sheets</option>
-            <option>Fitness App</option>
-            <option>Email</option>
-            <option>In-person check-in</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="checkinFrequency">Check-in Frequency <span class="req">*</span></label>
-          <select id="checkinFrequency" name="checkinFrequency" required>
-            <option value="">Select</option>
-            <option>Daily</option>
-            <option>Every 3 days</option>
-            <option>Weekly</option>
-            <option>Bi-weekly</option>
-            <option>Monthly</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hearAboutUs">How did you hear about us?</label>
-          <select id="hearAboutUs" name="hearAboutUs">
-            <option value="">Select</option>
-            <option>Instagram</option>
-            <option>YouTube</option>
-            <option>Friend Referral</option>
-            <option>Google Search</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label for="additionalNotes">Any additional notes or questions?</label>
-          <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Anything else you'd like us to know..."></textarea>
         </div>
       </div>
     </section>
